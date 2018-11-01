@@ -37,7 +37,7 @@ void get_player_move()
 {
 int x,y;
 printf("enter X,Y coordinate for your move:");
-scanf(""%d %*c %d",&x,&y);       //hi baby//
+scanf(""%d %d",&x,&y);
 x--;
 y--;
 if(matrix[x][y]!=' ')
@@ -62,7 +62,7 @@ printf("draw\n");
 exit(0);
 }
 else
-matrix[i][j]='0';
+matrix[i][j]='O';
 }
 //display the matrix on screen.//
 void disp_matrix()
