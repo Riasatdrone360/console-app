@@ -1,0 +1,7 @@
+typedef struct{
+char name[30],destination[10],flightid[10],dateofjourney[20],source[10];
+float fare;
+} user;
+float calcfare(user *);
+void display();
+void input();
