@@ -1,26 +1,26 @@
 #include<stdio.h>
 #include <stdlib.h>
 #include<string.h>
-typedef struct {
+struct flight{
 	char source[15];
 	char destination[15];
-	char flightNo[5];
+	char flightNo[10];
 	char date[12];
 	char time[6];
 	int fare;
-}flight;
-struct flight f1={"NEW DELHI","KOLKATA","AJ56LK","12-10-2018","12:30",6899}
-/*strcpy(f1.source,"NEW DELHI");
-f1.destination="KOLKATA";
-f1.flightNo="AJ56LK";
-f1.date="12-10-2018";
-f1.time="12:30";
- f1.fare=6899;*/
-typedef struct
-{
+};
+flight f[10];
+  f[0]={"NEW DELHI","KOLKATA","AJ56LK","12-10-2018","12:30",6899};
+/*f[0].source="NEW DELHI";
+f[0].destination="KOLKATA";
+f[0].flightNo="AJ56LK";
+f[0].date="12-10-2018";
+f[0].time="12:30";
+ f[0].fare=6899;*/
+struct seatinfo{
 	int seatno;
 	char booking_ID[10];
-}seatinfo;
+};
 seatinfo seats;
 int n=0,l=0;//n for locating the searched flight & l for locating booking id
 char sterminal[15];
@@ -53,7 +53,7 @@ scanf("%s",&dte);
 void allotflight()
 {
 	int j=0;
-	for(int i=0;!strcmp(sterminal,f1.source)||!strcmp(dterminal,f1.destination)||!strcmp(dte,f1.date)||i<10;i++)
+	for(int i=0;!strcmp(sterminal,f[i].source)||!strcmp(dterminal,f[i].destination)||!strcmp(dte,f[i].date)||i<10;i++)
       {j++;
 	  n=i;}
 	  if(j!=0)
@@ -66,7 +66,7 @@ void calcfare()
 	printf("Enter number of seats you want to book\n");
 scanf("%d",&nofseat);
 if(nofseat<seatsavailable)
-totcost=nofseat*f1.fare;
+totcost=nofseat*f[n].fare;
 else
 printf("sorry for inconvinience, but we have only %d seat left",seatsavailable);
 printf("wanna try again(y/n)");
@@ -83,11 +83,11 @@ void allotseat()
 }
 void display()
 {
-	printf("source station:%s",f1.source);
-	printf("destination station:%s",f1.destination);
-   printf("flight number :%s",f1.flightNo);
-   printf("Date of flight journey :%s",f1.date);
-   printf("time of the flight is %s",f1.time);
+	printf("source station:%s",f[n].source);
+	printf("destination station:%s",f[n].destination);
+   printf("flight number :%s",f[n].flightNo);
+   printf("Date of flight journey :%s",f[n].date);
+   printf("time of the flight is %s",f[n].time);
    printf("number of seats :%d",nofseat);
    printf("starting seat number=%d",seats.seatno);
     printf("booking id : %s",seats.booking_ID);
