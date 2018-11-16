@@ -1,0 +1,121 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include<conio.h>
+#include<string.h>
+struct flight{
+	char fsource[15];
+	char fdestination[15];
+	int fare;
+	int seatno;
+	char flightid[10];
+}f;
+int i=1;
+void screenheader();
+void display();
+char ch;
+void main()
+{
+	screenheader();
+	do{
+	printf("plz. enter your source station");
+	scanf("%s",f.fsource);
+	printf("plz. enter your destination station");
+	scanf("%s",&f.fdestination);
+	if(!strcasecmp(f.fsource,"NEW DELHI"))
+	if(!strcasecmp(f.fdestination,"chennai"))
+	f.fare=9999;
+	else if(!strcasecmp(f.fdestination,"kolkata"))
+	f.fare=7999;
+	else if(!strcasecmp(f.fdestination,"mumbai"))
+	f.fare=6999;
+	else if(!strcasecmp(f.fdestination,"gujrat"))
+	f.fare=4999;
+	else
+	{
+	printf("we don't have flight to %s",f.fsource);
+	i=0;
+	}
+	else if(!strcasecmp(f.fsource,"KOLKATA"))
+	if(!strcasecmp(f.fdestination,"new delhi"))
+	f.fare=7999;
+	else if(!strcasecmp(f.fdestination,"mumbai"))
+	f.fare=8249;
+	else if(!strcasecmp(f.fdestination,"gujrat"))
+	f.fare=8999;
+	else if(!strcasecmp(f.fdestination,"chennai"))
+	f.fare=8549;
+	else
+	{
+		i=0;
+	 printf("we don't have flight to %s",f.fdestination);
+}
+	else if(!strcasecmp(f.fsource,"MUMBAI"))
+	if(!strcasecmp(f.fdestination,"new delhi"))
+	f.fare=6999;
+	else if(!strcasecmp(f.fdestination,"kolkata"))
+	f.fare=8249;
+	else if(!strcasecmp(f.fdestination,"gujrat"))
+	f.fare=5999;
+	else if(!strcasecmp(f.fdestination,"chennai"))
+	f.fare=4999;
+	else
+	{
+	i=0;
+	printf("we don't have flight to %s",f.fdestination);
+}
+	else if(!strcasecmp(f.fsource,"GUJRAT"))
+	if (!strcasecmp(f.fdestination,"new delhi"))
+	f.fare=4999;
+	else if(!strcasecmp(f.fdestination,"kolkata"))
+	f.fare=8999;
+	else if(!strcasecmp(f.fdestination,"mumbai"))
+	f.fare=5999;
+	else if(!strcasecmp(f.fdestination,"chennai"))
+	f.fare=5899;
+	else{
+	printf("we don't have flight to %s",f.fdestination);
+    i=0;
+}
+	else if(!strcasecmp(f.fsource,"CHENNAI"))
+	if(!strcasecmp(f.fdestination,"mumbai"))
+	f.fare=4999;
+	else if(!strcasecmp(f.fdestination,"new delhi"))
+	f.fare=9999;
+	else if(!strcasecmp(f.fdestination,"kolkata"))
+	f.fare=8549;
+	else if(!strcasecmp(f.fdestination,"gujrat"))
+	f.fare=5899;
+	else printf("we don't have flight to %s",f.fdestination);
+	else
+	{
+     i=0;
+	printf("we dont have flight from %s",f.fsource);
+}
+if(i)
+display();
+	printf("WANNA TRY AGAIN(y/n)");
+	scanf(&ch);
+	if(ch=='n'||ch=='N')
+	i=0;
+}while(i);
+	getch();
+}
+void screenheader()
+ {
+   printf("\n                         :::::::::::::::::::::::::::::::::::::::::::");
+   printf("\n                         ::                                       ::");
+   printf("\n                         ::     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@     ::");
+   printf("\n                         ::     @                           @     ::");
+   printf("\n                         ::     @         WELCOME TO        @     ::");
+   printf("\n                         ::     @                           @     ::");
+   printf("\n                         ::     @   AIRPLANE RESERVATION    @     ::");
+   printf("\n                         ::     @                           @     ::");
+   printf("\n                         ::     @          SYSTEM           @     ::");
+   printf("\n                         ::     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@     ::");
+   printf("\n                         ::                                       ::");
+   printf("\n                         :::::::::::::::::::::::::::::::::::::::::::\n\n");
+}
+void display()
+{
+
+}
