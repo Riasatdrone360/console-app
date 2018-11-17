@@ -1,3 +1,4 @@
+int i;
 #include <stdio.h>
 #include <stdlib.h>
 #include<conio.h>
@@ -91,6 +92,8 @@ void main()
      i=0;
 	printf("we dont have flight from %s",f.fsource);
 }
+strcpy(f.flightid,"AX34PR89");
+f.seatno=i;
 if(i)
 display();
 	printf("WANNA TRY AGAIN(y/n)");
@@ -117,5 +120,9 @@ void screenheader()
 }
 void display()
 {
-
+printf("SOURCE STATION : %s",f.fsource);
+printf("SOURCE DESTINATION : %s",f.fdestination);
+printf("TOTAL FARE : %d",f.fare);
+printf("FLIGHT ID : %c",f.flightid);
+printf("SEAT NO : %d",f.seat no);
 }
